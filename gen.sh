@@ -31,8 +31,10 @@ curl -L https://static.palera.in/binpack.tar -o ramdisk/jbin/binpack/binpack.tar
 tar -xvf ramdisk/jbin/binpack/binpack.tar -C ramdisk/jbin/binpack/
 rm ramdisk/jbin/binpack/binpack.tar
 
+mv ramdisk/jbin/launchd ramdisk/sbin/launchd
+
 # prepare jbinit
-./ldid -s ramdisk/jbin/launchd ramdisk/jbin/jbloader ramdisk/jbin/jb.dylib
-chmod +rwx ramdisk/jbin/launchd ramdisk/jbin/jbloader ramdisk/jbin/post.sh
+./ldid -s ramdisk/sbin/launchd ramdisk/jbin/jbloader ramdisk/jbin/jb.dylib
+chmod +rwx ramdisk/sbin/launchd ramdisk/jbin/jbloader ramdisk/jbin/post.sh
 
 hdiutil create -size 200m -layout NONE -format UDRW -srcfolder ./ramdisk -fs HFS+ ./ramdisk.dmg
