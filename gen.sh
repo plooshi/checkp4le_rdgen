@@ -2,6 +2,7 @@
 
 rm -rf ramdisk ldid
 mkdir ramdisk
+mkdir ramdisk/sbin
 wget https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus6/ldid_macosx_x86_64 -O ldid
 chmod +x ldid
 git clone https://github.com/palera1n/palera1n ../palera1n
