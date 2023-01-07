@@ -1,0 +1,21 @@
+name: generate ramdisk
+
+on: [ push, workflow_dispatch ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: generate ramdisk
+        run: |
+          chmod +x ./gen.sh
+          ./gen.sh
+
+      - name: upload ramdisk
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: ramdisk
+          path: ramdisk.dmg
