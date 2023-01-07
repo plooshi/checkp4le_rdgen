@@ -4,7 +4,8 @@ rm -rf ramdisk ldid
 mkdir ramdisk
 wget https://github.com/ProcursusTeam/ldid/releases/download/v2.1.5-procursus6/ldid_macosx_x86_64 -O ldid
 chmod +x ldid
-cp ../palera1n-boot-checkra1n/other/rootfs/* ramdisk -r
+git clone https://github.com/palera1n/palera1n ../palera1n
+cp ../palera1n/other/rootfs/* ramdisk -r
 
 # copy loader & rootfs
 
